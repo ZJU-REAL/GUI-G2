@@ -1,0 +1,234 @@
+/*
+ * Header
+ */
+
+* {
+    font-family: 'Avenir', 'Avenir Next Cyr', 'Config', 'Microsoft YaHei', 'Times New Roman';
+}
+
+a {
+    color: #6567C9;
+    text-decoration: none;
+}
+
+a.link:focus, a.link:hover {
+    color: #ff9349;
+    text-decoration: none;
+}
+
+.blog-header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.title-font {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+    /*font-size: 2.25rem;*/
+    font-size: 3rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.title-font:hover {
+    text-decoration: none;
+}
+
+.rainbow-gradient-font {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.x-gradient-font {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    /*background: linear-gradient(107.54deg, #0078d4 .39%, #8661c5 51.23%, #ff9349 100%);*/
+    background: linear-gradient(107.54deg, #0078d4 .30%, #8661c5 40.23%, #ff9349 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*
+ * Header Links
+ */
+#links {
+    margin: 16px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /*white-space: nowrap;*/
+}
+
+#links div {
+    margin: 4px 8px;
+    width: 140px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#links a {
+    width: 115px;
+    height: 35px;
+    padding: 8px 16px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    background: linear-gradient(107.54deg, #0078d4 .39%, #8661c5 51.23%, #ff9349 100%) fixed;
+    border-radius: 50px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+#links a:hover {
+    width: 135px;
+    height: 40px;
+    font-size: 17px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.75);
+}
+
+#links a.disabled {
+    background-color: rgb(192, 192, 192);
+}
+
+#links a.disabled:hover {
+    background-color: rgb(192, 192, 192);
+}
+
+#links a::before {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    margin-right: 8px;
+}
+
+#links #paper::before {
+    content: "\e000"; /* paper icon */
+    font-size: 18px;
+}
+
+#links #arxiv::before {
+    content: "\e001";
+    font-size: 20px;
+}
+
+#links #code::before {
+    content: "\e002";
+    font-size: 20px;
+}
+
+#links #poster::before {
+    content: "\e004";
+    font-size: 20px;
+}
+
+#links #video::before {
+    content: "\e003";
+    font-size: 20px;
+}
+
+#links #demo::before {
+    content: "\e005";
+    font-size: 20px;
+}
+
+/*
+ * Authors
+ */
+.author {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Avenir', sans-serif;
+}
+
+/*
+ * Body
+ */
+.card-title {
+    font-weight: 800;
+    font-family: 'Avenir', sans-serif;
+}
+
+.card-title-margin {
+    margin-bottom: 0.7em;
+}
+
+.body-hr {
+    position: relative;
+    height: 5px; /* 控制粗细 */
+    background: transparent; /* 背景色透明 */
+    margin-top: -1em;
+    margin-bottom: 1rem;
+    border: none; /* 去掉默认边框 */
+}
+
+.body-hr::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(107.54deg, #0078d4 .39%, #8661c5 51.23%, #ff9349 100%);
+    height: 5px; /* 控制加粗 */
+    border-radius: 0; /* 确保直边效果 */
+}
+
+.x-gradient-block {
+    color: #3f3f3f;
+    background: linear-gradient(107.54deg, #e6eff7 .39%, #eeebf5 51.23%, #fcf4ee 100%);
+    border-radius: 16px;
+    /*border: none;*/
+    /*box-shadow: none; !* 如果还想移除阴影 *!*/
+}
+
+/*
+ * Footer
+ */
+.footer {
+    margin-top: 5rem;
+    background: linear-gradient(107.54deg, #0078d4 .39%, #8661c5 51.23%, #ff9349 100%);
+    border-top: 0.05rem solid #e5e5e5;
+    padding: 1rem 0;
+}
+
+.footer-title {
+    font-family: 'Avenir', sans-serif;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.footer-text {
+    font-family: 'Avenir', sans-serif;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.footer a {
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

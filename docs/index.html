@@ -1,0 +1,1244 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--Include Bootstrap's JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+    <!-- Custom JS for this template -->
+    <script src="js/copyText.js"></script>
+
+    <!--Include the icon fonts stylesheet-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!--Include Bootstrap's CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+          crossorigin="anonymous">
+    <!--Local Icon-->
+    <link rel="stylesheet" href="icons/style.css">
+    <!--Local Fonts-->
+    <link rel="stylesheet" href="fonts/avenir-next/stylesheet.css">
+    <link rel="stylesheet" href="fonts/segoe-print/stylesheet.css">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Website Title -->
+    <title>GUI-G²: Gaussian Reward Modeling for GUI Grounding</title>
+    <!-- <title>GUI-G^2: Gaussian Reward Modeling for GUI Grounding</title> -->
+    <!-- <h1>GUI-G<sup>2</sup>: Gaussian Reward Modeling for GUI Grounding</h1> -->
+    <!-- The description that appears when you share the link -->
+    <meta property="og:description" content="GUI-G2: Gaussian Reward Modeling for GUI Grounding with Continuous Spatial Feedback"/>
+    <!-- Used to display page descriptions in search results -->
+    <meta name="description" content="GUI-G2, GUI grounding, Gaussian reward, reinforcement learning, multimodal">
+    <!-- favicon -->
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon">
+    <style>
+        .author {
+            margin: 2rem 0;
+        }
+        .author-name {
+            display: inline-block;
+            margin: 0.3rem 1rem;
+            white-space: nowrap;
+        }
+        .author-name a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .author-name a:hover {
+            color: #007bff;
+        }
+        .author-name sup {
+            font-size: 0.8em;
+            margin-left: 2px;
+        }
+        .organization {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 1rem;
+        }
+        .footnote {
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .author-name {
+                display: block;
+                margin: 0.2rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<header class="container">
+    <hr>
+    <!-- Paper Title -->
+    <div class="container text-center">
+        <span class="title-font x-gradient-font">GUI-G²:</span>
+        <a class="title-font text-body-emphasis"
+           href="#">
+            Gaussian Reward Modeling for GUI Grounding
+        </a>
+    </div>
+    <hr>
+    <!-- author list -->
+    <div class="container author text-center">
+        <!-- authors arranged in neat rows -->
+        <div class="row">
+            <div class="col-12">
+                <div class="author-name">
+                    <a href="https://github.com/sugarandgugu"><strong>Fei Tang</strong></a><sup>1,2</sup>
+                </div>
+                <div class="author-name">
+                    <a href="#"><strong>Zhangxuan Gu</strong></a><sup>2</sup>
+                </div>
+                <div class="author-name">
+                    <a href="#"><strong>Zhengxi Lu</strong></a><sup>1</sup>
+                </div>
+                <div class="author-name">
+                    <a href="#"><strong>Xuyang Liu</strong></a><sup>2</sup>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="author-name">
+                    <a href="#"><strong>Shuheng Shen</strong></a><sup>2</sup>
+                </div>
+                <div class="author-name">
+                    <a href="#"><strong>Changhua Meng</strong></a><sup>2</sup>
+                </div>
+                <div class="author-name">                                                                                                                                    
+                     <a href="#"><strong>Weng Wang</strong></a><sup>1</sup>
+                 </div>
+                <div class="author-name">
+                    <a href="#"><strong>Wenqi Zhang</strong></a><sup>1</sup>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                 <div class="author-name">
+                    <!-- <a href="https://github.com/tricktreat"><strong>Yongliang Shen</strong></a><sup>1†</sup> -->
+                    <a href="https://github.com/tricktreat"><strong>Yongliang Shen</strong></a><sup>1</sup>
+                 </div> 
+                <div class="author-name">
+                    <a href="#"><strong>Weiming Lu</strong></a><sup>1</sup>
+                </div>
+                <div class="author-name">
+                    <a href="#"><strong>Jun Xiao</strong></a><sup>1</sup>
+                </div>
+                <div class="author-name">
+                    <a href="#"><strong>Yueting Zhuang</strong></a><sup>1</sup>
+                </div>
+            </div>
+        </div>
+        <!-- author organization -->
+        <div class="row mt-3">
+            <div class="col-12 organization">
+                <sup>1</sup>Zhejiang University &nbsp;&nbsp;
+                <sup>2</sup>Ant Group &nbsp;&nbsp;
+                <!-- <sup>†</sup>Corresponding author -->
+            </div>
+        </div>
+    <!-- paper status -->
+    <div class="text-center" style="margin-top: 20px">
+        <h3>Under Review</h3>
+    </div>
+    <!-- links -->
+    <div class="text-center">
+        <div class="row justify-content-md-center">
+            <div id="links">
+                <div class="col col-lg-2">
+                    <a id="paper" href="#">Paper</a>
+                </div>
+                <div class="col col-lg-2">
+                    <a id="arxiv" href="#">Arxiv</a>
+                </div>
+                <div class="col col-lg-2">
+                    <a id="code" href="https://github.com/zju-real/GUI-G2">Code</a>
+                </div>
+                <div class="col col-lg-2">
+                    <a id="demo" href="https://zju-real.github.io/GUI-G2">Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- teaser -->
+    <!-- <div class="text-center">
+        <figure class="figure">
+            <img src="./assets/motivation.png" class="img-thumbnail figure-img img-fluid rounded"
+                 alt="GUI-G<sup>2</sup> Performance Comparison and Human Click Behavior">
+            <figcaption class="figure-caption">
+                <strong>GUI grounding performance and human click behavior.</strong> Left: Performance comparison of various models on ScreenSpot-Pro across different parameter scales. Right: Human click distribution from AITW reveals natural Gaussian patterns around target centers (μ = 0.111, σ = 0.429), validating our design choice of continuous Gaussian rewards over discrete binary feedback.
+            </figcaption>
+        </figure>
+    </div> -->
+
+</header>
+<br>
+
+<main class="container">
+    <!-- Motivation -->
+    <div class="card border-0">
+        <div class="card-body x-gradient-block">
+            <h2 class="card-title text-center card-title-margin">Motivation</h2>
+            <p class="card-text">
+                Traditional GUI grounding approaches suffer from fundamental limitations in reward design. Existing reinforcement learning methods employ binary rewards that treat GUI elements as simple hit-or-miss targets, creating sparse feedback signals that fail to capture the continuous nature of spatial interactions. This binary paradigm ignores the nuanced spatial relationships inherent in human-computer interaction, where users naturally exhibit clicking patterns that form Gaussian distributions around target centers. Our analysis of real-world interaction data from the AITW dataset reveals that human clicks follow a natural Gaussian pattern (μ = 0.111, σ = 0.429), providing strong empirical evidence for modeling GUI elements as continuous distributions rather than discrete points. This insight motivates our GUI-G<sup>2</sup> framework, which bridges the gap between human clicking behavior and machine learning rewards through principled Gaussian modeling.
+            </p>
+            
+            <div class="text-center mt-4">
+                <figure class="figure">
+                    <img src="./assets/motivation.png" class="img-thumbnail figure-img img-fluid rounded"
+                         alt="GUI-G2 Performance Comparison and Human Click Behavior">
+                    <figcaption class="figure-caption">
+                        <strong>GUI grounding performance and human click behavior.</strong> Left: Performance comparison of various models on ScreenSpot-Pro across different parameter scales. Right: Human click distribution from AITW reveals natural Gaussian patterns around target centers (μ = 0.111, σ = 0.429), validating our design choice of continuous Gaussian rewards over discrete binary feedback.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <!-- Abstract -->
+    <div class="card border-0">
+        <div class="card-body x-gradient-block">
+            <h2 class="card-title text-center card-title-margin">Abstract</h2>
+            <p class="card-text">
+                Graphical User Interface (GUI) grounding maps natural language instructions to precise interface locations for autonomous interaction. Current reinforcement learning approaches use binary rewards that treat elements as hit-or-miss targets, creating sparse signals that ignore the continuous nature of spatial interactions. Motivated by human clicking behavior that naturally forms Gaussian distributions centered on target elements, we introduce <strong>GUI Gaussian Grounding Rewards (GUI-G<sup>2</sup>)</strong>, a principled reward framework that models GUI elements as continuous Gaussian distributions across the interface plane. GUI-G<sup>2</sup> incorporates two synergistic mechanisms: Gaussian point rewards model precise localization through exponentially decaying distributions centered on element centroids, while coverage rewards assess spatial alignment by measuring the overlap between predicted Gaussian distributions and target regions. To handle diverse element scales, we develop an adaptive variance mechanism that calibrates reward distributions based on element dimensions. Extensive experiments across ScreenSpot, ScreenSpot-v2, and ScreenSpot-Pro benchmarks demonstrate that GUI-G<sup>2</sup> substantially outperforms state-of-the-art methods, with the most significant improvement of <strong>24.7%</strong> on ScreenSpot-Pro.
+            </p>
+        </div>
+    </div>
+    <br>
+
+    <!-- Methodology -->
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title card-title-margin">Methodology</h2>
+            <hr class="body-hr"/>
+            <p class="card-text">
+                Our GUI-G<sup>2</sup> framework fundamentally reconceptualizes GUI grounding by modeling clicking points as smooth probability distributions across the interface plane. Rather than treating elements as discrete hit-or-miss targets, GUI-G<sup>2</sup> represents them as continuous Gaussian distributions that provide rich spatial information and dense learning signals.
+            </p>
+            <div class="text-center">
+                <figure class="figure">
+                    <img src="./assets/framework.png" class="figure-img img-fluid rounded" alt="GUI-G2 Method Overview">
+                    <!-- <figcaption class="figure-caption">
+                        <strong>GUI Gaussian Grounding Rewards (GUI-G<sup>2</sup>) Framework.</strong> Our framework transforms GUI grounding through continuous Gaussian modeling. Given a task instruction and screenshot, the policy model generates multiple predictions that are evaluated using our dual reward mechanism. Gaussian Point Rewards assess localization precision while Gaussian Coverage Rewards measure spatial overlap, together providing dense learning signals that guide policy optimization.
+                    </figcaption> -->
+                </figure>
+            </div>
+            
+            <h4 class="mt-4">Key Components</h4>
+            <ul>
+                <li><strong>Gaussian Point Rewards:</strong> Model precise localization through exponentially decaying distributions centered on element centroids</li>
+                <li><strong>Gaussian Coverage Rewards:</strong> Assess spatial alignment by measuring overlap between predicted and target distributions</li>
+                <li><strong>Adaptive Variance Mechanism:</strong> Automatically calibrates reward distributions based on element dimensions</li>
+            </ul>
+        </div>
+    </div>
+    <br>
+
+    <!-- Experimental Results -->
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title card-title-margin">Experimental Results</h2>
+            <hr class="body-hr"/>
+            <div class="table-container">
+                <h4>ScreenSpot-Pro Results</h4>
+                <p class="text-muted">Performance comparison of different agent models across various task categories based on Text, Icon, and Average scores on ScreenSpot-Pro. "-" indicates unreported results in original papers.</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover compact-table">
+                        <thead class="table-primary">
+                            <tr>
+                                <th rowspan="2" class="align-middle"><strong>Model</strong></th>
+                                <th colspan="2" class="text-center"><strong>CAD</strong></th>
+                                <th colspan="2" class="text-center"><strong>Dev</strong></th>
+                                <th colspan="2" class="text-center"><strong>Creative</strong></th>
+                                <th colspan="2" class="text-center"><strong>Scientific</strong></th>
+                                <th colspan="2" class="text-center"><strong>Office</strong></th>
+                                <th colspan="2" class="text-center"><strong>OS</strong></th>
+                                <th colspan="3" class="text-center"><strong>Avg.</strong></th>
+                            </tr>
+                            <tr>
+                                <th><strong>Text</strong></th>
+                                <th><strong>Icon</strong></th>
+                                <th><strong>Text</strong></th>
+                                <th><strong>Icon</strong></th>
+                                <th><strong>Text</strong></th>
+                                <th><strong>Icon</strong></th>
+                                <th><strong>Text</strong></th>
+                                <th><strong>Icon</strong></th>
+                                <th><strong>Text</strong></th>
+                                <th><strong>Icon</strong></th>
+                                <th><strong>Text</strong></th>
+                                <th><strong>Icon</strong></th>
+                                <th><strong>Text</strong></th>
+                                <th><strong>Icon</strong></th>
+                                <th><strong>Avg.</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-secondary">
+                                <td colspan="16"><em>Proprietary Models</em></td>
+                            </tr>
+                            <tr>
+                                <td>GPT-4o</td>
+                                <td>2.0</td>
+                                <td>0.0</td>
+                                <td>1.3</td>
+                                <td>0.0</td>
+                                <td>1.0</td>
+                                <td>0.0</td>
+                                <td>2.1</td>
+                                <td>0.0</td>
+                                <td>1.1</td>
+                                <td>0.0</td>
+                                <td>0.0</td>
+                                <td>0.0</td>
+                                <td>1.3</td>
+                                <td>0.0</td>
+                                <td>0.8</td>
+                            </tr>
+                            <tr>
+                                <td>Claude Computer Use</td>
+                                <td>14.5</td>
+                                <td>3.7</td>
+                                <td>22.0</td>
+                                <td>3.9</td>
+                                <td>25.9</td>
+                                <td>3.4</td>
+                                <td>33.9</td>
+                                <td>15.8</td>
+                                <td>30.1</td>
+                                <td>16.3</td>
+                                <td>11.0</td>
+                                <td>4.5</td>
+                                <td>23.4</td>
+                                <td>7.1</td>
+                                <td>17.1</td>
+                            </tr>
+                            
+                            <tr class="table-secondary">
+                                <td colspan="16"><em>General Open-source Models</em></td>
+                            </tr>
+                            <tr>
+                                <td>Qwen2.5-VL-3B</td>
+                                <td>9.1</td>
+                                <td>7.3</td>
+                                <td>22.1</td>
+                                <td>1.4</td>
+                                <td>26.8</td>
+                                <td>2.1</td>
+                                <td>38.2</td>
+                                <td>7.3</td>
+                                <td>33.9</td>
+                                <td>15.1</td>
+                                <td>10.3</td>
+                                <td>1.1</td>
+                                <td>23.6</td>
+                                <td>3.8</td>
+                                <td>16.1</td>
+                            </tr>
+                            <tr>
+                                <td>Qwen2.5-VL-7B</td>
+                                <td>16.8</td>
+                                <td>1.6</td>
+                                <td>46.8</td>
+                                <td>4.1</td>
+                                <td>35.9</td>
+                                <td>7.7</td>
+                                <td>49.3</td>
+                                <td>7.3</td>
+                                <td>52.5</td>
+                                <td>20.8</td>
+                                <td>37.4</td>
+                                <td>6.7</td>
+                                <td>38.9</td>
+                                <td>7.1</td>
+                                <td>26.8</td>
+                            </tr>
+                            
+                            <tr class="table-secondary">
+                                <td colspan="16"><em>GUI-specific Models (SFT)</em></td>
+                            </tr>
+                            <tr>
+                                <td>SeeClick-9.6B</td>
+                                <td>2.5</td>
+                                <td>0.0</td>
+                                <td>0.6</td>
+                                <td>0.0</td>
+                                <td>1.0</td>
+                                <td>0.0</td>
+                                <td>3.5</td>
+                                <td>0.0</td>
+                                <td>1.1</td>
+                                <td>0.0</td>
+                                <td>2.8</td>
+                                <td>0.0</td>
+                                <td>1.8</td>
+                                <td>0.0</td>
+                                <td>1.1</td>
+                            </tr>
+                            <tr>
+                                <td>Focus-2B</td>
+                                <td>7.6</td>
+                                <td>3.1</td>
+                                <td>22.8</td>
+                                <td>1.7</td>
+                                <td>23.7</td>
+                                <td>1.7</td>
+                                <td>25.0</td>
+                                <td>7.1</td>
+                                <td>23.2</td>
+                                <td>7.7</td>
+                                <td>17.8</td>
+                                <td>2.5</td>
+                                <td>19.8</td>
+                                <td>3.9</td>
+                                <td>13.3</td>
+                            </tr>
+                            <tr>
+                                <td>CogAgent-18B</td>
+                                <td>7.1</td>
+                                <td>3.1</td>
+                                <td>14.9</td>
+                                <td>0.7</td>
+                                <td>9.6</td>
+                                <td>0.0</td>
+                                <td>22.2</td>
+                                <td>1.8</td>
+                                <td>13.0</td>
+                                <td>0.0</td>
+                                <td>5.6</td>
+                                <td>0.0</td>
+                                <td>12.0</td>
+                                <td>0.8</td>
+                                <td>7.7</td>
+                            </tr>
+                            <tr>
+                                <td>Aria-UI</td>
+                                <td>7.6</td>
+                                <td>1.6</td>
+                                <td>16.2</td>
+                                <td>0.0</td>
+                                <td>23.7</td>
+                                <td>2.1</td>
+                                <td>27.1</td>
+                                <td>6.4</td>
+                                <td>20.3</td>
+                                <td>1.9</td>
+                                <td>4.7</td>
+                                <td>0.0</td>
+                                <td>17.1</td>
+                                <td>2.0</td>
+                                <td>11.3</td>
+                            </tr>
+                            <tr>
+                                <td>OS-Atlas-7B</td>
+                                <td>12.2</td>
+                                <td>4.7</td>
+                                <td>33.1</td>
+                                <td>1.4</td>
+                                <td>28.8</td>
+                                <td>2.8</td>
+                                <td>37.5</td>
+                                <td>7.3</td>
+                                <td>33.9</td>
+                                <td>5.7</td>
+                                <td>27.1</td>
+                                <td>4.5</td>
+                                <td>28.1</td>
+                                <td>4.0</td>
+                                <td>18.9</td>
+                            </tr>
+                            <tr>
+                                <td>ShowUI-2B</td>
+                                <td>2.5</td>
+                                <td>0.0</td>
+                                <td>16.9</td>
+                                <td>1.4</td>
+                                <td>9.1</td>
+                                <td>0.0</td>
+                                <td>13.2</td>
+                                <td>7.3</td>
+                                <td>15.3</td>
+                                <td>7.5</td>
+                                <td>10.3</td>
+                                <td>2.2</td>
+                                <td>10.8</td>
+                                <td>2.6</td>
+                                <td>7.7</td>
+                            </tr>
+                            <tr>
+                                <td>UGround-7B</td>
+                                <td>14.2</td>
+                                <td>1.6</td>
+                                <td>26.6</td>
+                                <td>2.1</td>
+                                <td>27.3</td>
+                                <td>2.8</td>
+                                <td>31.9</td>
+                                <td>2.7</td>
+                                <td>31.6</td>
+                                <td>11.3</td>
+                                <td>17.8</td>
+                                <td>0.0</td>
+                                <td>25.0</td>
+                                <td>2.8</td>
+                                <td>16.5</td>
+                            </tr>
+                            <tr>
+                                <td>UGround-V1-7B</td>
+                                <td>15.8</td>
+                                <td>1.2</td>
+                                <td>51.9</td>
+                                <td>2.8</td>
+                                <td>47.5</td>
+                                <td>9.7</td>
+                                <td>57.6</td>
+                                <td>14.5</td>
+                                <td>60.5</td>
+                                <td>13.2</td>
+                                <td>38.3</td>
+                                <td>7.9</td>
+                                <td>45.2</td>
+                                <td>8.1</td>
+                                <td>31.1</td>
+                            </tr>
+                            <tr>
+                                <td>UI-TARS-2B</td>
+                                <td>17.8</td>
+                                <td>4.7</td>
+                                <td>47.4</td>
+                                <td>4.1</td>
+                                <td>42.9</td>
+                                <td>6.3</td>
+                                <td>56.9</td>
+                                <td>17.3</td>
+                                <td>50.3</td>
+                                <td>17.0</td>
+                                <td>21.5</td>
+                                <td>5.6</td>
+                                <td>39.6</td>
+                                <td>8.4</td>
+                                <td>27.7</td>
+                            </tr>
+                            <tr>
+                                <td>UI-TARS-7B</td>
+                                <td>20.8</td>
+                                <td>9.4</td>
+                                <td>58.4</td>
+                                <td>12.4</td>
+                                <td>50.0</td>
+                                <td>9.1</td>
+                                <td>63.9</td>
+                                <td>31.8</td>
+                                <td>63.3</td>
+                                <td>20.8</td>
+                                <td>30.8</td>
+                                <td>16.9</td>
+                                <td>47.8</td>
+                                <td>16.2</td>
+                                <td>35.7</td>
+                            </tr>
+                            <tr>
+                                <td>UI-TARS-72B</td>
+                                <td>18.8</td>
+                                <td>12.5</td>
+                                <td>62.9</td>
+                                <td>17.2</td>
+                                <td>57.1</td>
+                                <td>15.4</td>
+                                <td>64.6</td>
+                                <td>20.9</td>
+                                <td>63.3</td>
+                                <td>26.4</td>
+                                <td>42.1</td>
+                                <td>15.7</td>
+                                <td>50.9</td>
+                                <td>17.6</td>
+                                <td>38.1</td>
+                            </tr>
+                            <tr>
+                                <td>Jedi-3B</td>
+                                <td>27.4</td>
+                                <td>9.4</td>
+                                <td>61.0</td>
+                                <td>13.8</td>
+                                <td>53.5</td>
+                                <td>8.4</td>
+                                <td>54.2</td>
+                                <td>18.2</td>
+                                <td>64.4</td>
+                                <td>32.1</td>
+                                <td>38.3</td>
+                                <td>9.0</td>
+                                <td>49.8</td>
+                                <td>13.7</td>
+                                <td>36.1</td>
+                            </tr>
+                            <tr>
+                                <td>Jedi-7B</td>
+                                <td>38.0</td>
+                                <td>14.1</td>
+                                <td>42.9</td>
+                                <td>11.0</td>
+                                <td>50.0</td>
+                                <td>11.9</td>
+                                <td>72.9</td>
+                                <td>25.5</td>
+                                <td>75.1</td>
+                                <td>47.2</td>
+                                <td>33.6</td>
+                                <td>16.9</td>
+                                <td>52.6</td>
+                                <td>18.2</td>
+                                <td>39.5</td>
+                            </tr>
+                            <tr>
+                                <td>GUI-Actor-7B</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td>44.6</td>
+                            </tr>
+                            
+                            <tr class="table-secondary">
+                                <td colspan="16"><em>GUI-specific Models (RL)</em></td>
+                            </tr>
+                            <tr>
+                                <td>UI-R1-3B</td>
+                                <td>11.2</td>
+                                <td>6.3</td>
+                                <td>22.7</td>
+                                <td>4.1</td>
+                                <td>27.3</td>
+                                <td>3.5</td>
+                                <td>42.4</td>
+                                <td>11.8</td>
+                                <td>32.2</td>
+                                <td>11.3</td>
+                                <td>13.1</td>
+                                <td>4.5</td>
+                                <td>24.9</td>
+                                <td>6.4</td>
+                                <td>17.8</td>
+                            </tr>
+                            <tr>
+                                <td>UI-R1-E-3B</td>
+                                <td>37.1</td>
+                                <td>12.5</td>
+                                <td>46.1</td>
+                                <td>6.9</td>
+                                <td>41.9</td>
+                                <td>4.2</td>
+                                <td>56.9</td>
+                                <td>21.8</td>
+                                <td>65.0</td>
+                                <td>26.4</td>
+                                <td>32.7</td>
+                                <td>10.1</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td>33.5</td>
+                            </tr>
+                            <tr>
+                                <td>GUI-R1-3B</td>
+                                <td>26.4</td>
+                                <td>7.8</td>
+                                <td>33.8</td>
+                                <td>4.8</td>
+                                <td>40.9</td>
+                                <td>5.6</td>
+                                <td>61.8</td>
+                                <td>17.3</td>
+                                <td>53.6</td>
+                                <td>17.0</td>
+                                <td>28.1</td>
+                                <td>5.6</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                            </tr>
+                            <tr>
+                                <td>GUI-R1-7B</td>
+                                <td>23.9</td>
+                                <td>6.3</td>
+                                <td>49.4</td>
+                                <td>4.8</td>
+                                <td>38.9</td>
+                                <td>8.4</td>
+                                <td>55.6</td>
+                                <td>11.8</td>
+                                <td>58.7</td>
+                                <td>26.4</td>
+                                <td>42.1</td>
+                                <td>16.9</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                            </tr>
+                            <tr>
+                                <td>InfiGUI-R1-3B</td>
+                                <td>33.0</td>
+                                <td>14.1</td>
+                                <td>51.3</td>
+                                <td>12.4</td>
+                                <td>44.9</td>
+                                <td>7.0</td>
+                                <td>58.3</td>
+                                <td>20.0</td>
+                                <td>65.5</td>
+                                <td>28.3</td>
+                                <td>43.9</td>
+                                <td>12.4</td>
+                                <td>49.1</td>
+                                <td>14.1</td>
+                                <td>35.7</td>
+                            </tr>
+                            <tr>
+                                <td>GUI-G1-3B</td>
+                                <td>39.6</td>
+                                <td>9.4</td>
+                                <td>50.7</td>
+                                <td>10.3</td>
+                                <td>36.6</td>
+                                <td>11.9</td>
+                                <td>61.8</td>
+                                <td>30.0</td>
+                                <td>67.2</td>
+                                <td>32.1</td>
+                                <td>23.5</td>
+                                <td>10.6</td>
+                                <td>49.5</td>
+                                <td>16.8</td>
+                                <td>37.1</td>
+                            </tr>
+                            <tr>
+                                <td>SE-GUI-3B</td>
+                                <td>38.1</td>
+                                <td>12.5</td>
+                                <td>55.8</td>
+                                <td>7.6</td>
+                                <td>47.0</td>
+                                <td>4.9</td>
+                                <td>61.8</td>
+                                <td>16.4</td>
+                                <td>59.9</td>
+                                <td>24.5</td>
+                                <td>40.2</td>
+                                <td>12.4</td>
+                                <td>50.4</td>
+                                <td>11.8</td>
+                                <td>35.9</td>
+                            </tr>
+                            <tr>
+                                <td>SE-GUI-7B</td>
+                                <td>51.3</td>
+                                <td class="best-score">42.2</td>
+                                <td>68.2</td>
+                                <td class="best-score">19.3</td>
+                                <td class="best-score">57.6</td>
+                                <td>9.1</td>
+                                <td>75.0</td>
+                                <td class="best-score">28.2</td>
+                                <td class="best-score">78.5</td>
+                                <td class="best-score">43.4</td>
+                                <td>49.5</td>
+                                <td class="best-score">25.8</td>
+                                <td>63.5</td>
+                                <td class="best-score">21.0</td>
+                                <td>47.3</td>
+                            </tr>
+                            
+                            <tr class="table-secondary">
+                                <td colspan="16"><em>Ours</em></td>
+                            </tr>
+                            <tr class="table-success">
+                                <td class="model-name">GUI-G<sup>2</sup>-7B</td>
+                                <td class="best-score">55.8</td>
+                                <td>12.5</td>
+                                <td class="best-score">68.8</td>
+                                <td>17.2</td>
+                                <td>57.1</td>
+                                <td class="best-score">15.4</td>
+                                <td class="best-score">77.1</td>
+                                <td>24.5</td>
+                                <td>74.0</td>
+                                <td>32.7</td>
+                                <td class="best-score">57.9</td>
+                                <td>21.3</td>
+                                <td class="best-score">64.7</td>
+                                <td>19.6</td>
+                                <td class="best-score">47.5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Performance Comparison Chart -->
+            <div class="table-container">
+                <h4>ScreenSpot Results</h4>
+                <p class="text-muted">Performance comparison on ScreenSpot benchmark. <strong>Bold</strong> highlights the best results, "-" indicates missing values due to unavailable results in the original paper, unreleased model checkpoints, and inference code.</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead class="table-primary">
+                            <tr>
+                                <th rowspan="2" class="align-middle"><strong>Model</strong></th>
+                                <th colspan="6" class="text-center"><strong>Accuracy (%)</strong></th>
+                                <th rowspan="2" class="align-middle"><strong>Avg.</strong></th>
+                            </tr>
+                            <tr>
+                                <th colspan="2" class="text-center"><strong>Mobile</strong></th>
+                                <th colspan="2" class="text-center"><strong>Desktop</strong></th>
+                                <th colspan="2" class="text-center"><strong>Web</strong></th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th><strong>Text</strong></th>
+                                <th><strong>Icon</strong></th>
+                                <th><strong>Text</strong></th>
+                                <th><strong>Icon</strong></th>
+                                <th><strong>Text</strong></th>
+                                <th><strong>Icon</strong></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-secondary">
+                                <td colspan="8"><em>Proprietary Models</em></td>
+                            </tr>
+                            <tr>
+                                <td>GPT-4o</td>
+                                <td>30.5</td>
+                                <td>23.2</td>
+                                <td>20.6</td>
+                                <td>19.4</td>
+                                <td>11.1</td>
+                                <td>7.8</td>
+                                <td>18.8</td>
+                            </tr>
+                            <tr>
+                                <td>Claude Computer Use</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td>83.0</td>
+                            </tr>
+                            
+                            <tr class="table-secondary">
+                                <td colspan="8"><em>General Open-source Models</em></td>
+                            </tr>
+                            <tr>
+                                <td>Qwen2-VL-7B</td>
+                                <td>61.3</td>
+                                <td>39.3</td>
+                                <td>52.0</td>
+                                <td>45.0</td>
+                                <td>33.0</td>
+                                <td>21.8</td>
+                                <td>42.9</td>
+                            </tr>
+                            <tr>
+                                <td>Qwen2.5-VL-3B</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td>55.5</td>
+                            </tr>
+                            <tr>
+                                <td>Qwen2.5-VL-7B</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td>84.7</td>
+                            </tr>
+                            
+                            <tr class="table-secondary">
+                                <td colspan="8"><em>GUI-specific Models (SFT)</em></td>
+                            </tr>
+                            <tr>
+                                <td>CogAgent-18B</td>
+                                <td>67.0</td>
+                                <td>24.0</td>
+                                <td>74.2</td>
+                                <td>20.0</td>
+                                <td>70.4</td>
+                                <td>28.6</td>
+                                <td>47.4</td>
+                            </tr>
+                            <tr>
+                                <td>SeeClick-9.6B</td>
+                                <td>78.0</td>
+                                <td>52.0</td>
+                                <td>72.2</td>
+                                <td>30.0</td>
+                                <td>55.7</td>
+                                <td>32.5</td>
+                                <td>53.4</td>
+                            </tr>
+                            <tr>
+                                <td>UGround-7B</td>
+                                <td>82.8</td>
+                                <td>60.3</td>
+                                <td>82.5</td>
+                                <td>63.6</td>
+                                <td>80.4</td>
+                                <td>70.4</td>
+                                <td>73.3</td>
+                            </tr>
+                            <tr>
+                                <td>OS-Atlas-7B</td>
+                                <td>93.0</td>
+                                <td>72.9</td>
+                                <td>91.8</td>
+                                <td>62.9</td>
+                                <td>90.9</td>
+                                <td>74.3</td>
+                                <td>82.5</td>
+                            </tr>
+                            <tr>
+                                <td>ShowUI-2B</td>
+                                <td>92.3</td>
+                                <td>75.5</td>
+                                <td>76.3</td>
+                                <td>61.1</td>
+                                <td>81.7</td>
+                                <td>63.6</td>
+                                <td>75.1</td>
+                            </tr>
+                            <tr>
+                                <td>Focus-2B</td>
+                                <td>90.1</td>
+                                <td>78.2</td>
+                                <td>80.9</td>
+                                <td>65.0</td>
+                                <td>81.7</td>
+                                <td>68.5</td>
+                                <td>77.4</td>
+                            </tr>
+                            <tr>
+                                <td>Aguvis-7B</td>
+                                <td>95.6</td>
+                                <td>77.7</td>
+                                <td>93.8</td>
+                                <td>67.1</td>
+                                <td>88.3</td>
+                                <td>75.2</td>
+                                <td>84.4</td>
+                            </tr>
+                            <tr>
+                                <td>Aguvis-72B</td>
+                                <td>94.5</td>
+                                <td>85.2</td>
+                                <td>95.4</td>
+                                <td>77.9</td>
+                                <td>91.3</td>
+                                <td>85.9</td>
+                                <td>89.2</td>
+                            </tr>
+                            <tr>
+                                <td>UI-TARS-2B</td>
+                                <td>93.0</td>
+                                <td>75.5</td>
+                                <td>90.7</td>
+                                <td>68.6</td>
+                                <td>84.3</td>
+                                <td>74.8</td>
+                                <td>82.3</td>
+                            </tr>
+                            <tr>
+                                <td>UI-TARS-7B</td>
+                                <td>94.5</td>
+                                <td>85.2</td>
+                                <td>95.9</td>
+                                <td>85.7</td>
+                                <td>90.0</td>
+                                <td>83.5</td>
+                                <td>89.5</td>
+                            </tr>
+                            <tr>
+                                <td>UI-TARS-72B</td>
+                                <td>94.9</td>
+                                <td>82.5</td>
+                                <td>89.7</td>
+                                <td>88.6</td>
+                                <td>88.7</td>
+                                <td>85.0</td>
+                                <td>88.4</td>
+                            </tr>
+                            <tr>
+                                <td>GUI-Actor-7B</td>
+                                <td>94.9</td>
+                                <td>82.1</td>
+                                <td>91.8</td>
+                                <td>80.0</td>
+                                <td>91.3</td>
+                                <td>85.4</td>
+                                <td>88.3</td>
+                            </tr>
+                            
+                            <tr class="table-secondary">
+                                <td colspan="8"><em>GUI-specific Models (RL)</em></td>
+                            </tr>
+                            <tr>
+                                <td>UI-R1-3B</td>
+                                <td>95.6</td>
+                                <td>84.7</td>
+                                <td>90.2</td>
+                                <td>59.3</td>
+                                <td>85.2</td>
+                                <td>73.3</td>
+                                <td>83.3</td>
+                            </tr>
+                            <tr>
+                                <td>UI-R1-E-3B</td>
+                                <td>97.1</td>
+                                <td>83.0</td>
+                                <td>95.4</td>
+                                <td>77.9</td>
+                                <td>91.7</td>
+                                <td>85.0</td>
+                                <td>89.2</td>
+                            </tr>
+                            <tr>
+                                <td>GUI-R1-3B</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td>93.8</td>
+                                <td>64.8</td>
+                                <td>89.6</td>
+                                <td>72.1</td>
+                                <td class="missing-value">-</td>
+                            </tr>
+                            <tr>
+                                <td>GUI-R1-7B</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td>91.8</td>
+                                <td>73.6</td>
+                                <td>91.3</td>
+                                <td>75.7</td>
+                                <td class="missing-value">-</td>
+                            </tr>
+                            <tr>
+                                <td>InfiGUI-R1-3B</td>
+                                <td>97.1</td>
+                                <td>81.2</td>
+                                <td>94.3</td>
+                                <td>77.1</td>
+                                <td>91.7</td>
+                                <td>77.6</td>
+                                <td>87.5</td>
+                            </tr>
+                            <tr>
+                                <td>SE-GUI-7B</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td class="missing-value">-</td>
+                                <td>88.2</td>
+                            </tr>
+                            <tr>
+                                <td>GUI-G1-3B</td>
+                                <td class="best-score">98.6</td>
+                                <td>85.8</td>
+                                <td class="best-score">96.4</td>
+                                <td>80.7</td>
+                                <td>91.4</td>
+                                <td>82.3</td>
+                                <td>90.3</td>
+                            </tr>
+                            
+                            <tr class="table-secondary">
+                                <td colspan="8"><em>Ours</em></td>
+                            </tr>
+                            <tr class="table-success">
+                                <td class="model-name">GUI-G<sup>2</sup>-7B</td>
+                                <td>96.7</td>
+                                <td class="best-score">90.8</td>
+                                <td>95.9</td>
+                                <td class="best-score">88.6</td>
+                                <td class="best-score">90.9</td>
+                                <td class="best-score">86.9</td>
+                                <td class="best-score">92.0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="table-container">
+            <h4>Analysis</h4>
+            <!-- Analysis Figures -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <figure class="figure">
+                        <img src="./assets/reward_compare.png" class="img-thumbnail figure-img img-fluid rounded"
+                             alt="Reward Analysis"
+                             style="height: 240px; width: 100%; object-fit: contain;">
+                        <!-- <figcaption class="figure-caption">
+                            <strong>Sparse vs Gaussian Reward Analysis.</strong> Our Gaussian rewards demonstrate superior convergence compared to sparse binary rewards.
+                        </figcaption> -->
+                    </figure>
+                </div>
+                <div class="col-md-6">
+                    <figure class="figure">
+                        <img src="./assets/training_dynamic.png" class="img-thumbnail figure-img img-fluid rounded"
+                             alt="Ablation Study"
+                             style="height: 240px; width: 100%; object-fit: contain;">
+                    </figure>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <br>
+
+    <!-- Key Insights -->
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title card-title-margin">Key Insights</h2>
+            <hr class="body-hr"/>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>🎯 Continuous vs Binary Rewards</h5>
+                    <p>Human clicking behavior naturally follows Gaussian distributions. Our continuous reward mechanism captures this spatial uncertainty, providing dense learning signals compared to sparse binary rewards.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>🔄 Adaptive Variance Mechanism</h5>
+                    <p>GUI elements vary significantly in size. Our adaptive variance mechanism automatically calibrates reward distributions based on element dimensions, ensuring consistent learning across interface components.</p>
+                </div>
+            </div>
+            
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <h5>🎭 Dual Component Design</h5>
+                    <p>Gaussian Point Rewards focus on precise localization while Gaussian Coverage Rewards assess spatial overlap, together modeling both precision and coverage requirements.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>📈 Superior Performance</h5>
+                    <p>Achieves up to 24.7% improvement on ScreenSpot-Pro and outperforms models with 10x more parameters, demonstrating the effectiveness of our approach.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!-- Citation -->
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title card-title-margin">Citation</h2>
+            <p id="bibtex" class="card-text" style="border: #1a1c20 1px">
+                <code> @article{tang2025guig2,<br>
+                    &nbsp;&nbsp;title={GUI-G2: Gaussian Reward Modeling for GUI Grounding},<br>
+                    &nbsp;&nbsp;author={Tang, Fei and Zhang, Wenqi and Shen, Yongliang and Lu, Weiming and Xiao, Jun and Zhuang, Yueting},<br>
+                    &nbsp;&nbsp;journal={arXiv preprint},<br>
+                    &nbsp;&nbsp;year={2025}<br>
+                    }
+                </code>
+            </p>
+
+            <!-- Bibtex (Button trigger modal)-->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    onclick="copyText()">
+                Copy BibTex
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Bibtex</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="bibtex modal-body">
+                            Copy Success!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!-- Acknowledgements -->
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title card-title-margin">Acknowledgements</h4>
+            <p class="card-text">We thank the research community for their valuable feedback and the anonymous reviewers for their constructive comments. We also acknowledge the template from <a href="https://ximinng.github.io/">Ximing Xing</a> that helped us build this project homepage.</p>
+        </div>
+    </div>
+    <br>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- left layout -->
+            <div class="col-12 col-md-6 text-md-start text-center">
+                <p class="footer-title mb-0">GUI-G<sup>2</sup></p>
+            </div>
+            <!-- right layout -->
+            <div class="col-12 col-md-6 text-md-end text-center">
+                <p class="footer-text mb-0">
+                    This webpage template was originally made by
+                    <a href="https://github.com/ximinng/GithubPages-Template" class="link-primary text-decoration-none">Ximing Xing</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+function copyText() {
+    const text = document.getElementById("bibtex").innerText;
+    const new_input = document.createElement('input');
+    new_input.value = text
+    document.body.appendChild(new_input)
+    // select value of new_input
+    new_input.select();
+    // exec copy command
+    document.execCommand("copy");
+    document.body.removeChild(new_input);
+}
+</script>
+
+</body>
+</html>
