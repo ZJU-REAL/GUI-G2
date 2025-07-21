@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="./assets/logo.png" width="60" style="vertical-align: middle; margin-right: 15px;" />
+  <img src="./assets/logo.png" width="40" style="vertical-align: middle; margin-right: 15px;" />
   GUI-G²: Gaussian Reward Modeling for GUI Grounding
 </h1>
 
