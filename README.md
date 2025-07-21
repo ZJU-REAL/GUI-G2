@@ -53,12 +53,6 @@ Motivated by this, GUI-G² adopts a **gaussian reward framework** that reflects 
 - Rewarding proximity to target centers (Gaussian Point Reward),
 - Encouraging spatial region alignment (Gaussian Coverage Reward),
 - Dynamically adjusting precision with element size (Adaptive Variance).
-<!-- 
-<div align="center">
-  <img src="assets/acc_size_pro.jpg" alt="Accuracy by Element Size" width="70%" />
-  <p><em>GUI-G² maintains stable accuracy across varying element sizes with adaptive reward modeling.</em></p>
-</div> -->
-
 ---
 
 # ✨ Highlights
