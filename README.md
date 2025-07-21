@@ -28,19 +28,19 @@
 
 ---
 
-# 📚 Overview
+# Overview
 
-* 🎯 [Motivation](#motivation)
+* [Motivation](#motivation)
 * ✨ [Highlights](#highlights)
 * 🛠 [Installation](#installation)
 * 🚀 [Quick Start](#quick-start)
-* 📈 [Evaluation](#evaluation)
-* 🧠 [Reward Customization](#reward-customization)
+* [Evaluation](#evaluation)
+* [Reward Customization](#reward-customization)
 * 📄 [Citation](#citation)
 
 ---
 
-# 🎯 Motivation
+# Motivation
 <div align="center">
   <table width="100%">
     <tr>
@@ -112,7 +112,7 @@ GUI-G2/src/gui_g2/data_jsonl/example_training_json.json
 
 ---
 
-# 📈 Evaluation
+# Evaluation
 
 Checkpoints will be released soon. Please stay tuned.
 If you want to evaluate your model on ScreenSpot, please refer to [ScreenSpot-Pro](https://github.com/likaixin2000/ScreenSpot-Pro-GUI-Grounding).
@@ -140,7 +140,7 @@ If you want to evaluate your model on ScreenSpot, please refer to [ScreenSpot-Pr
 
 ---
 
-# 🧠 Reward Customization
+# Reward Customization
 
 To implement your own reward, modify:
 
