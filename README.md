@@ -161,13 +161,5 @@ Key components:
 If you use GUI-G², please cite our work:
 
 ```bibtex
-@misc{gui-g2,
-  title={Gaussian Reward Modeling for GUI Grounding},
-  author={Fei Tang and Yongliang Shen and Weiming Lu},
-  year={2025},
-  eprint={TBA},
-  archivePrefix={arXiv},
-  primaryClass={cs.HC},
-  url={https://arxiv.org/abs/TBA}
-}
+update soon...
 ```
