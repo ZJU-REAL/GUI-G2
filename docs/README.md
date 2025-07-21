@@ -16,7 +16,7 @@
 ---
 
 <div align="center">
-  <img src="assets/framework.jpg" alt="GUI-G2 Framework" width="80%" />
+  <img src="./assets/framework.jpg" alt="GUI-G2 Framework" width="80%" />
   <p><em>GUI-G²: Gaussian rewards guide precise and robust GUI grounding.</em></p>
 </div>
 
@@ -39,13 +39,13 @@
   <table width="100%">
     <tr>
       <td width="40%" align="center" valign="top">
-        <img src="assets/aitw_click_behavior.jpg" alt="AITW Click Behavior" style="max-width: 90%; height: auto;" />
+        <img src="./assets/motivation.jpg" alt="AITW Click Behavior" style="max-width: 90%; height: auto;" />
         <p><em>AITW: Human GUI clicks follow Gaussian-like spatial distributions centered on targets.</em></p>
       </td>
-      <td width="54%" align="center" valign="top">
+<!--       <td width="54%" align="center" valign="top">
         <img src="assets/acc_size_pro.jpg" alt="Accuracy by Element Size" style="max-width: 90%; height: auto;" />
         <p><em>GUI-G² maintains stable accuracy across varying element sizes with adaptive reward modeling.</em></p>
-      </td>
+      </td> -->
     </tr>
   </table>
 </div>
