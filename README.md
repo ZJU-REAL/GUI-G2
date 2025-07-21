@@ -31,12 +31,12 @@
 # Overview
 
 * [Motivation](#motivation)
-* ✨ [Highlights](#highlights)
-* 🛠 [Installation](#installation)
-* 🚀 [Quick Start](#quick-start)
+* [Highlights](#highlights)
+* [Installation](#installation)
+* [Quick Start](#quick-start)
 * [Evaluation](#evaluation)
 * [Reward Customization](#reward-customization)
-* 📄 [Citation](#citation)
+* [Citation](#citation)
 
 ---
 
