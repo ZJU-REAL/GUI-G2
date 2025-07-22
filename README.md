@@ -9,6 +9,7 @@
 
 [![Huggingface Paper](https://img.shields.io/badge/Paper-2507.15846-ffcc00?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/papers/2507.15846)
 [![Paper](https://img.shields.io/badge/Paper-TBA-A42C25?style=for-the-badge)](https://arxiv.org/abs/2507.15846)
+[![alphaXiv](https://img.shields.io/badge/alphaXiv-2507.15846-1f8ceb?style=for-the-badge)](https://www.alphaxiv.org/abs/2507.15846)
 [![Project](https://img.shields.io/badge/Project-Page-007ec6?style=for-the-badge)](https://zju-real.github.io/GUI-G2)
 [![GitHub](https://img.shields.io/badge/Code-GUI--G2-000000?style=for-the-badge&logo=github)](https://github.com/zju-real/GUI-G2)
 
