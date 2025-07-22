@@ -109,7 +109,7 @@ You must configure:
 Training data should follow the JSONL format demonstrated in:
 
 ```
-GUI-G2/src/gui_g2/data_jsonl/example_training_json.json
+example_training_json.json
 ```
 
 ---
