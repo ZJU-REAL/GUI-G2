@@ -1,0 +1,21 @@
+[
+    {
+      "image_path": "/aguvis-stage1/seeclick/web_data/seeclick_web_imgs/225c746e170faf02a418692e1b0897fe.png",
+      "image_url": "http://1papercut.com/",
+      "height": 1080,
+      "width": 1920,
+      "instruction": "Wish List (0)",
+      "rela_box": [
+          0.584375,
+          0.016666666666666666,
+          0.628125,
+          0.044444444444444446
+      ],
+      "abs_box": [
+          1122,
+          18,
+          1206,
+          48
+      ]
+    }
+  ]
