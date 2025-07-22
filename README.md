@@ -157,7 +157,11 @@ Key components:
 * `Adaptive Variance Mechanism`
 
 ---
+🙏 Acknowledgement
 
+The RL Training code build from [VLM-R1 project](https://github.com/om-ai-lab/VLM-R1).
+
+---
 # 📄 Citation
 
 If you use GUI-G², please cite our work:
