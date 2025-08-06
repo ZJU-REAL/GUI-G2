@@ -1,0 +1,4 @@
+datasets:
+    - json_path: /data10/shz/dataset/rec/rec_jsons_internvl/refcoco_train.json
+    - json_path: /data10/shz/dataset/rec/rec_jsons_internvl/refcocop_train.json
+    - json_path: /data10/shz/dataset/rec/rec_jsons_internvl/refcocog_train.json
