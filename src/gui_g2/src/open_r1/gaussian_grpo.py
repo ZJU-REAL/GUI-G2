@@ -58,7 +58,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 from filelock import FileLock
-
+from open_r1.vlm_modules.qwen_module import Qwen2VLModule
+from open_r1.vlm_modules.internvl_module import InvernVLModule
 
 def custom_forward(
         self,
