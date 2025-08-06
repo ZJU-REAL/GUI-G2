@@ -410,8 +410,8 @@ def format_reward(completions, **kwargs):
                 with open(log_path, "a") as f:
                     f.write(f"\n|||||||||||||||||||||||||||||||||||||||||||||||||||| RANK: {dist.get_rank()}, match: {num} ||||||||||||||||||||||||||||||||||||||||||||||||||||\n")
                     f.write(f"Image Path: \n{kwargs['image_path'][0]}\n")
-                    f.write(f"Resized Width: {kwargs['width_resized'][0]}, Resized Height: {kwargs['height_resized'][0]}\n")
-                    f.write(f"\nInstruction: \n{kwargs['problem'][0]}\n")
+                    f.write(f"Width: {kwargs['width'][0]}, Height: {kwargs['height'][0]}\n")
+                    f.write(f"\nInstruction: \n{kwargs['instruction'][0]}\n")
                     f.write(f"\nformat not matched\n")
                     f.write(f"completion_contents: \n{completion_contents[i]}\n")
     return [1.0 if match else 0.0 for match in matches]
