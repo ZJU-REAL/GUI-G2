@@ -26,7 +26,7 @@
 
 # 🎉 News
 
-[2025-8-16] **We will upload our model next week.**
+[2025-8-16] **We will upload our model (GUI-G2-3B, GUI-G2-7B) next week.**
 
 [2025-7-22] **We release our paper: GUI-G²: Gaussian Reward Modeling for GUI Grounding. We plan to open-source our model GUI-G²-7B around August.**
 
