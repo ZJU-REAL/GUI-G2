@@ -152,7 +152,6 @@ def infer(instruction, image_path, model_name_or_path):
     tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
     processor = AutoProcessor.from_pretrained(model_name_or_path)
     
-    # 设置生成配置
     generation_config = GenerationConfig.from_pretrained(model_name_or_path, trust_remote_code=True).to_dict()
     generation_config.update({
         'max_length': 2048,
@@ -161,7 +160,6 @@ def infer(instruction, image_path, model_name_or_path):
     })
     model.generation_config = GenerationConfig(**generation_config)
     
-    # 构建提示
     prompt_origin = 'Outline the position corresponding to the instruction: {}. The output should be only [x1,y1,x2,y2].'
     full_prompt = prompt_origin.format(instruction)
     
