@@ -340,3 +340,5 @@ If you use GUI-G², please cite our work:
       url={https://arxiv.org/abs/2507.15846}, 
 }
 ```
+If you like our project, please give us a star ⭐ on GitHub for the latest update.
+[![Star History Chart](https://api.star-history.com/svg?repos=ZJU-REAL/GUI-G2&type=Timeline)](https://www.star-history.com/#ZJU-REAL/GUI-G2&Timeline)
