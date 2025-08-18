@@ -273,9 +273,11 @@ def visualize_bbox(image_path, raw_response, save_path=None):
 raw_response = result['raw_response']
 visualize_bbox(image_path, raw_response, './result.jpg')
 ```
+
 <div align="center">
     <img src="./assets/plot_result.jpg" alt="">
 </div>
+
 ---
 
 # Evaluation
