@@ -248,7 +248,6 @@ def visualize_bbox(image_path, raw_response, save_path=None):
     center_x = (x1 + x2) // 2
     center_y = (y1 + y2) // 2
     
-    # 画边界框
     cv2.rectangle(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
     cv2.circle(image, (center_x, center_y), 5, (255, 0, 0), -1)
     cv2.circle(image, (center_x, center_y), 8, (255, 255, 255), 2)
@@ -263,17 +262,16 @@ def visualize_bbox(image_path, raw_response, save_path=None):
     plt.tight_layout()
     plt.show()
     
-    # 保存
     if save_path:
         result_image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
         cv2.imwrite(save_path, result_image)
         print(f"save to : {save_path}")
 
-# 使用示例
 raw_response = result['raw_response']
 visualize_bbox(image_path, raw_response, './result.jpg')
 ```
 
+The green bbox is prediction.
 <div align="center">
     <img src="./assets/plot_result.jpg" alt="">
 </div>
