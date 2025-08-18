@@ -94,6 +94,7 @@ If needed, manually install the dependencies:
 pip install transformers==4.49.0
 pip install deepspeed==0.15.4
 pip install filelock
+pip install qwen_vl_utils
 ```
 
 ---
