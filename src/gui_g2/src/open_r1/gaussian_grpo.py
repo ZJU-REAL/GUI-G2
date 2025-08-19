@@ -58,7 +58,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 from filelock import FileLock
-
+from open_r1.vlm_modules.qwen_module import Qwen2VLModule
+from open_r1.vlm_modules.internvl_module import InvernVLModule
 
 def custom_forward(
         self,
@@ -409,7 +410,7 @@ def format_reward(completions, **kwargs):
                 with open(log_path, "a") as f:
                     f.write(f"\n|||||||||||||||||||||||||||||||||||||||||||||||||||| RANK: {dist.get_rank()}, match: {num} ||||||||||||||||||||||||||||||||||||||||||||||||||||\n")
                     f.write(f"Image Path: \n{kwargs['image_path'][0]}\n")
-                    f.write(f"Resized Width: {kwargs['width_resized'][0]}, Resized Height: {kwargs['height_resized'][0]}\n")
+                    # f.write(f"Width: {kwargs['width'][0]}, Height: {kwargs['height'][0]}\n")
                     f.write(f"\nInstruction: \n{kwargs['problem'][0]}\n")
                     f.write(f"\nformat not matched\n")
                     f.write(f"completion_contents: \n{completion_contents[i]}\n")
