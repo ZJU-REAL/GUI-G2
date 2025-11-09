@@ -28,7 +28,7 @@
 
 # 🎉 News
 
-[2025-11-08] **We are happy our paper was accepted to 2026 AAAI.** 
+[2025-11-08] **We are happy our paper was accepted to AAAI 2026.** 
 
 
 [2025-8-18] **We open-source our model: GUI-G2-3B, GUI-G2-7B.** Check it out on Huggingface. And we provide the inference code and example. Try it out.
