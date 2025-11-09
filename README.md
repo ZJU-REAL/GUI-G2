@@ -28,6 +28,9 @@
 
 # 🎉 News
 
+[2025-11-08] **We are happy our paper was accepted to 2026 AAAI.** 
+
+
 [2025-8-18] **We open-source our model: GUI-G2-3B, GUI-G2-7B.** Check it out on Huggingface. And we provide the inference code and example. Try it out.
 <a href="https://huggingface.co/inclusionAI/GUI-G2-3B"><img src="https://img.shields.io/badge/Model-GUI--G2--3B-007ec6?style=flat&logo=huggingface" alt="GUI-G2 3B Model"></a>
 <a href="https://huggingface.co/inclusionAI/GUI-G2-7B"><img src="https://img.shields.io/badge/Model-GUI--G2--7B-007ec6?style=flat&logo=huggingface" alt="GUI-G2 7B Model"></a>
