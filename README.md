@@ -28,6 +28,8 @@
 
 # 🎉 News
 
+[2026-2-02] **We released GUI-G2's poster and slides.** 
+
 [2025-11-08] **We are happy our paper was accepted to AAAI 2026.** 
 
 
