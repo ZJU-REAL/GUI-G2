@@ -28,6 +28,12 @@
 
 # 🎉 News
 
+[2026-04-15] * We opensource 🦞 **ClawGUI**: **A Unified Framework for Training, Evaluating, and Deploying GUI Agents**
+  - 📄 [![arXiv](https://img.shields.io/badge/arXiv-2604.11784-b31b1b?style=flat&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2604.11784)
+  - 💻 [![GitHub](https://img.shields.io/badge/GitHub-ZJU--REAL%2FClawGUI-181717?style=flat&logo=github&logoColor=white)](https://github.com/ZJU-REAL/ClawGUI)
+  - 🌐 [![Project Page](https://img.shields.io/badge/Project-Page-4CAF50?style=flat&logo=googlechrome&logoColor=white)](https://zju-real.github.io/ClawGUI-Page/)
+  - 🤗 [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Daily%20Paper-FFD21E?style=flat)](https://huggingface.co/papers/2604.11784)
+
 [2026-2-02] **We released GUI-G2's poster and slides.** 
 
 [2025-11-08] **We are happy our paper was accepted to AAAI 2026.** 
